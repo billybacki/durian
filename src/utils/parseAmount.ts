@@ -1,5 +1,5 @@
 import { Currency } from '@/constants/currency/currency'
-import { CurrencyAmount } from '@/constants/currency/currencyAmount'
+import { CurrencyAmount } from '@/constants/currency/CurrencyAmount'
 import { TonCurrency } from '@/constants/currency/TonCurrency'
 import { TonCurrencyAmount } from '@/constants/currency/TonCurrencyAmount'
 // import { TonCurrency } from '@/constants/currency/TonCurrency'

@@ -6,7 +6,7 @@ import { getDefaultComponents } from './components'
 export const fontFamily = 'Poppins'
 
 const TypographyComponent = {
-  fontFamily: [`"${fontFamily}"`, 'sans-serif'].join(','),
+  fontFamily,
   h1: { fontSize: 36, lineHeight: 46 / 36, color: 'red' },
   h2: { fontSize: 22, lineHeight: 28 / 22 },
   h3: { fontSize: 18, lineHeight: 26 / 18 },
@@ -20,7 +20,7 @@ const TypographyComponent = {
 
 const mode: PaletteMode = 'light'
 export const getCustomTheme = (): ThemeOptions => ({
-  components: getDefaultComponents('#222', fontFamily),
+  components: getDefaultComponents('#222', fontFamily, mode),
   typography: TypographyComponent,
   spacing: 1,
   shape: {

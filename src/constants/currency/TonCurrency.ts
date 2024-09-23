@@ -1,12 +1,12 @@
 import JSBI from 'jsbi'
-import { validateSolidityTypeInstance } from '../utils'
-import { SolidityType } from '../constants'
+import { validateSolidityTypeInstance } from './utils'
+import { SolidityType } from './constants'
 import { Address } from '@ton/core'
 import invariant from 'tiny-invariant'
 
-export const ZERO_ADDRESS = '0:0000000000000000000000000000000000000000000000000000000000000000'
+const TON_ZERO_ADDRESS = '0:0000000000000000000000000000000000000000000000000000000000000000'
 
-export class Currency {
+export class TonCurrency {
   public readonly address: Address
   public readonly decimals: number
   public readonly symbol?: string
@@ -34,8 +34,8 @@ export class Currency {
   }
 
   public static getNativeCurrency(decimals?: number) {
-    return new Currency(
-      ZERO_ADDRESS,
+    return new TonCurrency(
+      TON_ZERO_ADDRESS,
       decimals ? decimals : 9,
       'TON',
       'Toncoin',
@@ -43,7 +43,7 @@ export class Currency {
     )
   }
 
-  public equals(other: Currency): boolean {
+  public equals(other: TonCurrency): boolean {
     // short circuit on reference equality
     if (this === other) {
       return true
@@ -52,7 +52,7 @@ export class Currency {
   }
 
   public get isNative() {
-    return this.address.toRawString() === ZERO_ADDRESS
+    return this.address.toRawString() === TON_ZERO_ADDRESS
   }
 
   public setLogo(logo: string) {

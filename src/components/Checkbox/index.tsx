@@ -13,10 +13,10 @@ export default function Checkbox(props: Props) {
   const { checked, onChange, label = '', disabled } = props
   return (
     <FormControlLabel
-      sx={{ margin: 0, fontSize: 16, fontWeight: 400 }}
+      sx={{ margin: 0, fontSize: '1rem', fontWeight: 400 }}
       control={
         <MuiCheckbox
-          sx={{ padding: 0, marginRight: '12px' }}
+          sx={{ padding: 0, marginRight: '0.75rem' }}
           icon={<CheckboxIcon />}
           checkedIcon={<CheckboxCheckedIcon />}
         />

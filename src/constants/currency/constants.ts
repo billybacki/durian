@@ -5,6 +5,8 @@ export const TAX_FEE = JSBI.BigInt(10)
 // exports for external consumption
 export type BigintIsh = JSBI | bigint | string
 
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
+
 export enum Rounding {
   ROUND_DOWN,
   ROUND_HALF_UP,

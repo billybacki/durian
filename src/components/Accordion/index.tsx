@@ -20,13 +20,13 @@ export default function _Accordion(props: Props) {
       sx={{
         boxShadow: 'none',
         '& .MuiAccordionSummary-content': {
-          margin: '20px 0'
+          margin: '1.25rem 0'
         }
       }}
       expanded={expanded}
     >
       <AccordionSummary
-        sx={{ fontSize: { xs: 14, md: 16 } }}
+        sx={{ fontSize: { xs: '0.875rem', md: '1rem' } }}
         expandIcon={expanded ? <RemoveIcon sx={{ color: '#929292' }} /> : <AddIcon sx={{ color: '#929292' }} />}
       >
         {summary}

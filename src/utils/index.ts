@@ -1,4 +1,4 @@
-import { ZERO_ADDRESS } from '@/constants/token/currency'
+import { ZERO_ADDRESS } from '@/constants/currency/constants'
 
 export function getCurrentTimeStamp(date?: Date | string | number) {
   return Number(((date ? new Date(date) : new Date()).getTime() / 1000).toFixed())

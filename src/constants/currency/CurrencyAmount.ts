@@ -5,9 +5,8 @@ import toFormat from 'toformat'
 import BigNumber from 'bignumber.js'
 import { Currency } from './currency'
 import { Fraction } from './fraction'
-import { BigintIsh, Rounding, SolidityType, TEN } from '../constants'
-import { parseBigintIsh, validateSolidityTypeInstance } from '../utils'
-import { currencyEquals } from './token'
+import { BigintIsh, Rounding, SolidityType, TEN } from './constants'
+import { parseBigintIsh, validateSolidityTypeInstance } from './utils'
 import { tryParseAmount } from '@/utils/parseAmount'
 
 const Big = toFormat(_Big)
@@ -98,5 +97,17 @@ export class CurrencyAmount extends Fraction {
    */
   public static fromAmount(currency: Currency, amount: string | number): CurrencyAmount | undefined {
     return tryParseAmount(amount.toString(), currency)
+  }
+}
+
+function currencyEquals(currencyA: Currency, currencyB: Currency): boolean {
+  if (currencyA instanceof Currency && currencyB instanceof Currency) {
+    return currencyA.equals(currencyB)
+  } else if (currencyA instanceof Currency) {
+    return false
+  } else if (currencyB instanceof Currency) {
+    return false
+  } else {
+    return currencyA === currencyB
   }
 }

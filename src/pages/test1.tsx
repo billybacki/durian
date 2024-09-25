@@ -1,17 +1,12 @@
-import routes from '@/constants/routes'
-import { Button, Container, Stack, Typography } from '@mui/material'
-import { Link } from 'react-router-dom'
+import { Container, Stack, Typography } from '@mui/material'
+import TestPwa from './testpwa'
 
 export default function Test1() {
   return (
     <Container maxWidth="lg">
       <Stack spacing={20} padding={20} alignItems={'center'}>
-        <Typography variant="h1">TITLE</Typography>
-        <Link to={routes.test3} style={{ width: '100%' }}>
-          <Button variant="contained" fullWidth>
-            PWA Page
-          </Button>
-        </Link>
+        <Typography variant="h1">PWA Page Test</Typography>
+        <TestPwa />
       </Stack>
     </Container>
   )

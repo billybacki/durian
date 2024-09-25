@@ -2,7 +2,6 @@ import { Suspense, useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import routes from './constants/routes'
 import Test1 from './pages/test1'
-import TestPwa from './pages/testpwa'
 import ComingSoon from './components/ComingSoon'
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
       <Routes>
         <Route path={routes.test1} element={<Test1 />} />
         <Route path={routes.test2} element={<ComingSoon />} />
-        <Route path={routes.test3} element={<TestPwa />} />
         <Route path="*" element={<Navigate to={routes.test1} replace />} />
       </Routes>
     </Suspense>

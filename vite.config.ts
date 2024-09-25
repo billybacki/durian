@@ -21,8 +21,8 @@ export default defineConfig({
         name: 'Durian',
         short_name: 'Durian',
         description: 'Durian',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
+        theme_color: '#000000',
+        background_color: '#000000',
         start_url: '.',
         display: 'standalone',
         icons: [

@@ -60,5 +60,19 @@ export default createReducer(initialState, builder =>
     .addCase(updateThemeMode, (state, action) => {
       const { themeModel } = action.payload
       state.themeModel = themeModel
+
+      const themeColorMeta = document.querySelector('meta[name="theme-color"]')
+      const backgroundColorMeta = document.querySelector('meta[name="background-color"]')
+      const TileColorMeta = document.querySelector('meta[name="msapplication-TileColor"]')
+
+      if (themeModel === 'light') {
+        themeColorMeta?.setAttribute('content', '#ffffff')
+        backgroundColorMeta?.setAttribute('content', '#ffffff')
+        TileColorMeta?.setAttribute('content', '#ffffff')
+      } else {
+        themeColorMeta?.setAttribute('content', '#000000')
+        backgroundColorMeta?.setAttribute('content', '#000000')
+        TileColorMeta?.setAttribute('content', '#000000')
+      }
     })
 )

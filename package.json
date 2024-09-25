@@ -74,5 +74,6 @@
     "npm": "please-use-pnpm",
     "yarn": "please-use-pnpm",
     "pnpm": ">=9.x"
-  }
+  },
+  "packageManager": "pnpm@9.0.0"
 }

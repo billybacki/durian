@@ -4,7 +4,6 @@ import routes from './constants/routes'
 import Test1 from './pages/test1'
 import BetPage from './pages/betPage'
 import PwaPage from './pages/testpwa'
-import ComingSoon from './components/ComingSoon'
 import ChartPage from './pages/chartPage'
 import Verify from './pages/verify'
 
@@ -23,9 +22,7 @@ function App() {
     <Suspense fallback={null}>
       <Routes>
         <Route path={routes.index} element={<PwaPage />} />
-        <Route path={routes.test1} element={<Test1 />} />
-        <Route path={routes.test2} element={<ComingSoon />} />
-        <Route path={routes.test3} element={<>3</>} />
+        <Route path={routes.components} element={<Test1 />} />
         <Route path={routes.betPage} element={<BetPage />} />
         <Route path={routes.chartPage} element={<ChartPage />} />
         <Route path={routes.verify} element={<Verify />} />

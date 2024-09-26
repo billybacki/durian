@@ -1,6 +1,8 @@
+import routes from '@/constants/routes'
 import { useUpdateThemeMode } from '@/state/application/hooks'
 import { Button, Container, Divider, Stack, Typography } from '@mui/material'
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import usePwa from 'use-pwa'
 
 const App: FC = () => {
@@ -41,6 +43,20 @@ const App: FC = () => {
         <Button variant="contained" fullWidth onClick={toggleThemeMode}>
           ToggleThemeMode
         </Button>
+        <Stack spacing={10} mt={10}>
+          <Link to={routes.betPage}>
+            <Button variant="outlined">bet Page</Button>
+          </Link>
+          <Link to={routes.chartPage}>
+            <Button variant="outlined">chart Page</Button>
+          </Link>
+          <Link to={routes.components}>
+            <Button variant="outlined">components page</Button>
+          </Link>
+          <Link to={routes.verify}>
+            <Button variant="outlined">verify page</Button>
+          </Link>
+        </Stack>
       </Container>
     </Stack>
   )

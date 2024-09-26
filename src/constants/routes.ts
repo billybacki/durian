@@ -4,7 +4,8 @@ const routes = {
   test3: '/test3',
   betPage: '/betPage',
   chartPage: '/chartPage',
-  verify: '/verify'
+  verify: '/verify',
+  index: '/'
 }
 
 export default routes

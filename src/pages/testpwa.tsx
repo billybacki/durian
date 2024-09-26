@@ -13,7 +13,7 @@ const App: FC = () => {
       <Typography variant="h1">PWA Page Test</Typography>
       <Container sx={{ padding: 20 }}>
         {enabledPwa && !isPwa ? (
-          <Button variant="contained" disabled={!canInstallprompt || appinstalled} onClick={showInstallPrompt}>
+          <Button variant="contained" disabled={appinstalled} onClick={showInstallPrompt}>
             Install Pwa
           </Button>
         ) : (

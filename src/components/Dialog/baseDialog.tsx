@@ -15,6 +15,7 @@ import { useModal } from '@ebay/nice-modal-react'
 import CloseSvg from 'assets/svg/close-light.svg?react'
 import { useUpdateThemeMode } from '@/state/application/hooks'
 import useBreakpoint from '@/hooks/useBreakpoint'
+import { FontSize } from '@/themes'
 
 export interface BaseDialogProps extends Omit<MuiDialogProps, 'open' | 'content'> {
   onClose?: () => void
@@ -99,7 +100,7 @@ const BaseDialog = (props: BaseDialogProps) => {
             variant="h3"
             sx={{
               width: isSm ? 200 : 400,
-              fontSize: isSm ? 20 : 28,
+              fontSize: { xs: FontSize.f20, md: FontSize.f28 },
               color: 'var(--ps-white)',
               fontWeight: 500,
               whiteSpace: 'nowrap',

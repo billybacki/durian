@@ -1,6 +1,7 @@
 import React from 'react'
 import { InputLabel as MuiInputLabel } from '@mui/material'
 import InfoIcon from '../../assets/svg/info_icon.svg?react'
+import { FontSize } from '@/themes'
 
 export default function InputLabel({
   children,
@@ -23,7 +24,7 @@ export default function InputLabel({
       <div
         style={{
           opacity: 0.6,
-          fontSize: 12,
+          fontSize: FontSize.f14,
           fontWeight: 500,
           lineHeight: '148.69%',
           ...style

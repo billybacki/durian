@@ -3,6 +3,7 @@ import { Box } from '@mui/material'
 import CopyIcon from 'assets/svg/copy_icon.svg'
 import CheckIcon from '@mui/icons-material/Check'
 import useCopyClipboard from '@/hooks/useCopyClipboard'
+import { FontSize } from '@/themes'
 
 interface Props {
   toCopy: string
@@ -26,7 +27,7 @@ export default function Copy(props: Props) {
       }}
       onClick={() => setCopied(toCopy)}
     >
-      {isCopied ? <CheckIcon sx={{ opacity: 0.6, fontSize: 16 }} /> : <CopyIcon />}
+      {isCopied ? <CheckIcon sx={{ opacity: 0.6, fontSize: FontSize.f16 }} /> : <CopyIcon />}
       {children}
     </Box>
   )

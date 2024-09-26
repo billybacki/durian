@@ -33,3 +33,8 @@ export function isEmail(value: any): boolean {
     value
   )
 }
+
+export function shortenStr(str: string, start = 4, end = 4) {
+  if (!str || str.length <= 10) return str
+  return `${str?.substring(0, start)}...${str?.substring(str?.length - end, str?.length)}`
+}

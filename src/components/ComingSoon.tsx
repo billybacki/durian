@@ -3,7 +3,7 @@ import { Container, Paper, styled } from '@mui/material'
 
 const Title = styled('p')(`
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 88.69%;
 `)
 

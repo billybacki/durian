@@ -3,6 +3,7 @@ import { Box, Button } from '@mui/material'
 import Input, { InputProps } from './index'
 import { escapeRegExp } from '@/utils'
 import InputLabel from './InputLabel'
+import { FontSize } from '@/themes'
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
@@ -53,7 +54,7 @@ export default function InputNumerical({
           <InputLabel>{label}</InputLabel>
           <Box display="flex" alignItems="baseline">
             {!!balance && (
-              <InputLabel style={{ fontSize: '12px' }}>
+              <InputLabel style={{ fontSize: FontSize.f12 }}>
                 Available: {balance} {unit ?? 'USDT'}
               </InputLabel>
             )}

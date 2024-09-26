@@ -3,6 +3,7 @@ import { InputBase, styled, Typography } from '@mui/material'
 import { inputBaseClasses } from '@mui/material/InputBase'
 import InputLabel from './InputLabel'
 import { escapeRegExp, isEmail, isURL } from '../../utils'
+import { FontSize } from '@/themes'
 
 export interface InputProps {
   placeholder?: string
@@ -15,9 +16,8 @@ export interface InputProps {
   type?: React.HTMLInputTypeAttribute | 'unumber' | 'string' | 'uint'
   endAdornment?: React.ReactNode
   maxWidth?: string | number
-  height?: string | number
   error?: boolean
-  smallPlaceholder?: boolean
+  // smallPlaceholder?: boolean
   backgroundColor?: string
   rows?: string | number
   multiline?: boolean
@@ -28,16 +28,17 @@ export interface InputProps {
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   [`&.${inputBaseClasses.root}`]: {
-    fontSize: 16,
+    fontSize: FontSize.f16,
     color: theme.palette.text.primary,
-    // fontFamily: 'Roboto',
     fontWeight: 400,
-    // backgroundColor: theme.palette.background.default,
-    paddingLeft: 20,
-    borderRadius: 14
+    padding: '0 16px',
+    borderRadius: 4,
+    lineHeight: '100%'
   },
   [`&.${inputBaseClasses.focused}`]: { border: `1px solid ${theme.palette.primary.main} !important` },
   [`& .${inputBaseClasses.input}`]: {
+    padding: '10px 0',
+    height: 'auto',
     maxWidth: '100%',
     '&::-webkit-outer-spin-button': {
       WebkitAppearance: 'none'
@@ -81,9 +82,8 @@ export default function Input({
   onValue,
   onBlur,
   label,
-  height,
   error,
-  smallPlaceholder,
+  // smallPlaceholder,
   backgroundColor,
   rows,
   subStr,
@@ -131,11 +131,10 @@ export default function Input({
       {label && <InputLabel>{label}</InputLabel>}
       <StyledInputBase
         sx={{
-          minHeight: height || 50,
           [`&.${inputBaseClasses.root}`]: {
             backgroundColor: theme => backgroundColor || theme.palette.background.default,
             border: theme =>
-              `1px solid ${outlined ? 'rgba(255,255,255,.4)' : error ? theme.palette.error.main : 'transparent'}`
+              `1px solid ${outlined ? theme.palette.secondary.main : error ? theme.palette.error.main : theme.palette.secondary.main}`
           },
           [`&.${inputBaseClasses.focused}`]: {
             borderColor: theme =>
@@ -143,7 +142,8 @@ export default function Input({
           },
           [`& .${inputBaseClasses.input}`]: {
             '&::placeholder': {
-              fontSize: smallPlaceholder ? 13 : 16,
+              fontSize: FontSize.f16,
+              lineHeight: '100%',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
               overflow: 'hidden'
@@ -160,11 +160,11 @@ export default function Input({
         rows={rows}
         disabled={disabled}
         type={type}
-        endAdornment={endAdornment && <span style={{ paddingRight: 20 }}>{endAdornment}</span>}
+        endAdornment={endAdornment}
         {...rest}
       />
       {subStr && (
-        <Typography fontSize={12} mt={12} sx={{ opacity: 0.5 }}>
+        <Typography fontSize={FontSize.f12} mt={12} sx={{ opacity: 0.5 }}>
           {subStr}
         </Typography>
       )}

@@ -10,6 +10,7 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import SelectedIcon from 'assets/svg/selected_icon.svg'
 import React from 'react'
+import { FontSize } from '@/themes'
 
 interface Props {
   children?: React.ReactNode
@@ -30,7 +31,7 @@ interface Props {
 
 const StyledInputLabel = styled(MuiInputLabel)(({ theme }) => ({
   opacity: 0.6,
-  fontSize: 12,
+  fontSize: FontSize.f12,
   color: theme.palette.text.secondary,
   marginBottom: '8px'
 }))
@@ -92,7 +93,7 @@ export default function Select(props: Props) {
             // top: 10,
             zIndex: 999,
             color: theme.palette.text.secondary,
-            fontSize: 16,
+            fontSize: FontSize.f16,
             fontWeight: '600!important'
           },
           '& .MuiSelect-icon': {
@@ -100,10 +101,10 @@ export default function Select(props: Props) {
             color: theme.palette.text.primary
           },
           '&:hover': {
-            color: disabled ? theme.palette.text.primary : theme.palette.common.white,
+            color: disabled ? theme.palette.text.primary : 'var(--ps-color-500)',
             backgroundColor: disabled ? theme.palette.background.paper : theme.palette.primary.main,
             '& .MuiSelect-icon': {
-              color: disabled ? theme.palette.text.primary : theme.palette.common.white
+              color: disabled ? theme.palette.text.primary : 'var(--ps-color-500)'
             }
           },
           '& .Mui-disabled.MuiInputBase-input': {
@@ -125,7 +126,7 @@ export default function Select(props: Props) {
               boxShadow: theme => theme.shadows[4],
               transform: width ? 'translateX(-12px)!important' : 'none',
               '& li': {
-                fontSize: 16,
+                fontSize: FontSize.f16,
                 borderBottom: '1px solid rgba(0,0,0,0.1)',
                 display: 'flex',
                 alignItems: 'center',

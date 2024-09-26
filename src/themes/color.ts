@@ -3,99 +3,39 @@ import { IDefaultColor } from './types'
 
 export const defaultThemeColorOptions: IDefaultColor = {
   light: {
-    'text-primary': '#F5F4F3',
-    'text-primary2': 'rgba(245, 244, 243, 0.4)',
-    'text-primary3': '#695C47',
-    'text-primary4': '#978365',
-    'text-primary-10': 'rgba(255, 255, 255, 0.10)',
-    'text-primary-40': 'rgba(255, 255, 255, 0.40)',
-    'text-primary-80': 'rgba(255, 255, 255, 0.80)',
-    'text-05': 'rgba(33, 32, 28, 0.05)',
-    'text-08': 'rgba(33, 32, 28, 0.08)',
-    'text-10': 'rgba(33, 32, 28, 0.10)',
-    'text-20': 'rgba(33, 32, 28, 0.20)',
-    'text-40': 'rgba(33, 32, 28, 0.40)',
-    'text-60': 'rgba(33, 32, 28, 0.60)',
-    'text-80': 'rgba(33, 32, 28, 0.80)',
-    'text-100': '#21201C',
-    'text-secondary': '#868271',
-    'text-body': '#232015',
-    'Light-grey-01': '#F7F7F7',
-    'Dark-white': '#DEDEDE',
-    'grey-01': '#20201E',
-    'grey-03': '#959595',
-    'grey-04': '#D7D6D9',
-    'grey-05': '#E8E9E4',
-    'grey-06': '#F6F6F3',
-    'black-100': '#121212',
-    neutral: '#FFFFFF',
-    neutral2: '#EDEADD',
-    neutral3: '#8E8E80',
-    neutral4: '#282828',
-    neutral5: '#0D0D0D',
-    neutral6: 'rgba(230, 230, 206, 0.4)',
-    neutral7: '#E6E6E6',
-    red: '#DA3D41',
-    green: '#289764',
-    green2: '#CBEBD6',
-    'light-green': '#E1F25C',
-    blue: '#4E6EF3',
-    black: '1B1B1B',
-    white: '#FFFFFF',
-    'yellow-light': '#F9FCDE'
+    'color-100': '#FFF',
+    'color-200': '#F2F5F8',
+    'color-300': '#ECF1F5',
+    'color-500': '#828B92',
+    'color-600': '#000',
+    brand: '#F1D754',
+    rise: '#1CE33D',
+    drop: '#E66215',
+    black: '#000',
+    white: '#FFFFFF'
   },
   dark: {
-    'text-primary': '#F5F4F3',
-    'text-primary2': 'rgba(245, 244, 243, 0.4)',
-    'text-primary3': '#695C47',
-    'text-primary4': '#978365',
-    'text-primary-10': 'rgba(13, 13, 13, 0.10)',
-    'text-primary-40': 'rgba(13, 13, 13, 0.40)',
-    'text-primary-80': 'rgba(13, 13, 13, 0.80)',
-    'text-05': 'rgba(33, 32, 28, 0.05)',
-    'text-08': 'rgba(0, 0, 0, 0.08)',
-    'text-10': 'rgba(255, 255, 255, 0.10)',
-    'text-20': 'rgba(255, 255, 255, 0.20)',
-    'text-40': 'rgba(255, 255, 255, 0.40)',
-    'text-60': 'rgba(255, 255, 255, 0.60)',
-    'text-80': 'rgba(255, 255, 255, 0.80)',
-    'text-100': '#FFFFFF',
-    'text-secondary': '#868271',
-    'text-body': '#232015',
-    'Light-grey-01': '#F7F7F7',
-    'Dark-white': '#DEDEDE',
-    'grey-01': '#20201E',
-    'grey-03': '#959595',
-    'grey-04': '#D7D6D9',
-    'grey-05': '#E8E9E4',
-    'grey-06': '#F6F6F3',
-    'black-100': '#121212',
-    neutral: '#1B1B1B',
-    neutral2: '#282828',
-    neutral3: '#717171',
-    neutral4: '#BCBCBC',
-    neutral5: '#F5F5F7',
-    neutral6: '#F5F5F7',
-    neutral7: '#E6E6E6',
-    red: '#FF3030',
-    green: '#30AD44',
-    green2: '#D7FAD1',
-    'light-green': '#E1F25C',
-    blue: '#4E6EF3',
-    black: '#1B1B1B',
-    white: '#FFFFFF',
-    'yellow-light': '#F9FCDE'
+    'color-100': '#000',
+    'color-200': '#34383B',
+    'color-300': '#3B3D40',
+    'color-500': '#7C7E80',
+    'color-600': '#FFF',
+    brand: '#F1D754',
+    rise: '#1CE33D',
+    drop: '#E66215',
+    black: '#000',
+    white: '#FFFFFF'
   }
 }
 
 export const defaultThemeLightColors = {
   primary: {
-    main: '#1B1B1B',
-    dark: 'rgba(27, 27, 27, 0.80)',
+    main: '#000000',
+    dark: '#000000',
     contrastText: '#fff'
   },
   secondary: {
-    main: '#717171',
+    main: '#ECF1F5',
     dark: darken('#717171', 0.3),
     contrastText: '#323232'
   },
@@ -116,9 +56,9 @@ export const defaultThemeLightColors = {
     paper: '#FFFFFF'
   },
   text: {
-    primary: '#8E8E80',
-    secondary: '#717171',
-    disabled: 'rgba(33, 32, 28, 0.20)'
+    primary: '#000000',
+    secondary: '#000000',
+    disabled: '#ECF1F5'
   },
   action: {
     disabledBackground: '#717171',
@@ -129,11 +69,11 @@ export const defaultThemeLightColors = {
 export const defaultThemeDarkColors = {
   primary: {
     main: '#fff',
-    dark: 'rgba(255, 255, 255, 0.80)',
+    dark: '#fff',
     contrastText: '#0D0D0D'
   },
   secondary: {
-    main: '#717171',
+    main: '#3B3D40',
     dark: darken('#717171', 0.2),
     contrastText: '#323232'
   },
@@ -150,13 +90,13 @@ export const defaultThemeDarkColors = {
     main: '#31B047'
   },
   background: {
-    default: '#0D0D0D',
-    paper: '#1B1B1B'
+    default: '#000000',
+    paper: '#000000'
   },
   text: {
     primary: '#fff',
-    secondary: '#717171',
-    disabled: '#61666A'
+    secondary: '#fff',
+    disabled: '#3B3D40'
   },
   action: {
     disabledBackground: '#717171',

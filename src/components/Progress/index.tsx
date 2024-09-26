@@ -1,3 +1,4 @@
+import { FontSize } from '@/themes'
 import { Box, Typography, LinearProgress, linearProgressClasses, styled } from '@mui/material'
 
 const StyledLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -18,13 +19,13 @@ export default function Progress({ val, total, unit }: { val: number; total: num
   return (
     <Box display="grid" sx={{ width: 'max-content' }} columnGap={6} rowGap={4}>
       <Typography
-        fontSize={12}
+        fontSize={FontSize.f12}
         sx={{ gridRowStart: 1, gridRowEnd: 'span 2', textAlign: 'center', display: 'flex', alignItems: 'flex-end' }}
       >
         {value | 0}%
       </Typography>
       <Typography
-        fontSize={12}
+        fontSize={FontSize.f12}
         sx={{ gridColumnStart: 2, gridColumnEnd: 'span 1', textAlign: 'center' }}
       >{`${val} ${unit} / ${total} ${unit}`}</Typography>
       <StyledLinearProgress variant="determinate" value={value} sx={{ width: 120 }} />

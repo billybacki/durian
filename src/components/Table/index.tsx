@@ -15,6 +15,7 @@ import {
 import { useState } from 'react'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
+import { FontSize } from '@/themes'
 // import { visuallyHidden } from '@mui/utils'
 
 const Profile = styled('div')(`
@@ -67,7 +68,7 @@ const StyledTableHead = styled(TableHead)(({ theme }) => ({
   borderRadius: 8,
   overflow: 'hidden',
   '& .MuiTableCell-root': {
-    fontSize: '12px',
+    fontSize: FontSize.f12,
     whiteSpace: 'pre',
     lineHeight: '12px',
     background: 'rgba(255, 255, 255, 0.08)',
@@ -76,7 +77,7 @@ const StyledTableHead = styled(TableHead)(({ theme }) => ({
     borderBottom: 'none',
     '& .MuiTableSortLabel-root': {
       fontWeight: 400,
-      fontSize: '12px!important',
+      fontSize: `${FontSize.f12}!important`,
       color: theme.palette.text.secondary
     },
     '&:first-of-type': {
@@ -104,7 +105,7 @@ const StyledTableRow = styled(TableRow, { shouldForwardProp: () => true })<{
     background: variant === 'outlined' ? 'transparent' : theme.palette.background.default
   },
   '& .MuiTableCell-root': {
-    fontSize: (fontSize ?? '16px') + '!important',
+    fontSize: (fontSize ?? FontSize.f16) + '!important',
     justifyContent: 'flex-start',
     paddingLeft: 0,
     border: '1px solid',
@@ -112,7 +113,7 @@ const StyledTableRow = styled(TableRow, { shouldForwardProp: () => true })<{
     borderRight: 'none',
     borderLeft: 'none',
     '& .MuiTypography-root': {
-      fontSize: (fontSize ?? '16px') + '!important'
+      fontSize: (fontSize ?? FontSize.f16) + '!important'
     },
     '&:first-of-type': {
       borderLeft: '1px solid',
@@ -211,7 +212,13 @@ export default function Table({
               <Box display="flex" flexDirection="column" gap="16px">
                 {header.map((headerString, index) => (
                   <CardRow key={index}>
-                    <Typography variant="inherit" component="div" fontSize={12} color="#000000" sx={{ opacity: 0.5 }}>
+                    <Typography
+                      variant="inherit"
+                      component="div"
+                      fontSize={FontSize.f12}
+                      color="#000000"
+                      sx={{ opacity: 0.5 }}
+                    >
                       {headerString}
                     </Typography>
                     <Typography sx={{ color: theme => theme.palette.text.secondary }} component="div">

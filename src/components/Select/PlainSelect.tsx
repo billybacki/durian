@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Fade, Menu } from '@mui/material'
+import { FontSize } from '@/themes/defaultTheme'
 
 interface Props {
   children?: React.ReactNode
@@ -39,7 +40,7 @@ export default function Select(props: Props) {
           fontWeight: 400,
           borderRadius: 0,
           padding: 0,
-          fontSize: 14,
+          fontSize: FontSize.f14,
           color: theme => theme.palette.text.primary,
           opacity: open ? 1 : 0.5,
           '&:hover': {
@@ -88,7 +89,7 @@ export default function Select(props: Props) {
               padding: '10px 20px 18px 20px'
             },
             '& li': {
-              fontSize: 13,
+              fontSize: FontSize.f13,
               fontWeight: 400,
               color: theme => theme.palette.text.secondary,
               padding: '8px 0',

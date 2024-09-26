@@ -18,7 +18,7 @@ export function CloseIcon({ onClick }: { onClick?: () => void }) {
         }
       }}
     >
-      <MuiCloseIcon sx={{ color: theme => theme.palette.grey[500] }} />
+      <MuiCloseIcon sx={{ color: 'var(--ps-color-500)' }} />
     </IconButton>
   )
 }

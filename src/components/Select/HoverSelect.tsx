@@ -1,13 +1,14 @@
 import React from 'react'
 import { styled } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { FontSize } from '@/themes'
 
 const Wrapper = styled('div')({
   display: 'flex',
   width: 'fit-content',
   alignItems: 'center',
   fontWeight: 500,
-  fontSize: 14,
+  fontSize: FontSize.f14,
   marginRight: 20,
   position: 'relative',
   color: 'rgba(255,255,255,0.5)',
@@ -83,7 +84,7 @@ export default function HoverSelect({
   return (
     <Wrapper>
       {selectedDisplay}
-      <ExpandMoreIcon sx={{ fontSize: '18px' }} />
+      <ExpandMoreIcon sx={{ fontSize: FontSize.f18 }} />
       <div className="dropdown_wrapper">
         <Dropdown>
           {list.map((item, idx) => (

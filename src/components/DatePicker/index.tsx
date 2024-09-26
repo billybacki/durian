@@ -23,8 +23,8 @@ export default function BasicDateTimePicker({ value, onChange, minDateTime, maxD
             borderWidth: '1px !important'
           },
           '& .MuiOutlinedInput-root': {
-            height: 56,
-            color: 'var(--ps-gray-03, #959595)',
+            // height: 56,
+            color: 'var(--ps-color-500)',
             '&>input.MuiOutlinedInput-input': {
               paddingBottom: '18px !important'
             }

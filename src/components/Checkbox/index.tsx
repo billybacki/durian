@@ -1,6 +1,7 @@
 import { Checkbox as MuiCheckbox, FormControlLabel } from '@mui/material'
 import CheckboxIcon from '../../assets/svg/checkbox.svg'
 import CheckboxCheckedIcon from '../../assets/svg/checkbox_checked.svg'
+import { FontSize } from '@/themes'
 
 interface Props {
   checked: boolean
@@ -13,7 +14,7 @@ export default function Checkbox(props: Props) {
   const { checked, onChange, label = '', disabled } = props
   return (
     <FormControlLabel
-      sx={{ margin: 0, fontSize: '1rem', fontWeight: 400 }}
+      sx={{ margin: 0, fontSize: FontSize.f16, fontWeight: 400 }}
       control={
         <MuiCheckbox
           sx={{ padding: 0, marginRight: '0.75rem' }}

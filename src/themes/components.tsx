@@ -1,4 +1,5 @@
-import { Box, CommonColors, Components, PaletteMode, Theme, styled } from '@mui/material'
+import { CommonColors, Components, PaletteMode, Theme } from '@mui/material'
+import { FontSize } from '.'
 
 const buildVar = function (name: string) {
   const NAMESPACE = '--ps-'
@@ -29,7 +30,6 @@ export function getDefaultComponents(
           },
           body: {
             fontFamily: fontFamily,
-            fontSize: 14,
             color: bodyColor
           },
           a: {
@@ -49,7 +49,7 @@ export function getDefaultComponents(
     MuiInputBase: {
       styleOverrides: {
         root: {
-          height: 44,
+          // height: 44,
           'fieldset legend': {
             display: 'none!important'
           },
@@ -65,7 +65,7 @@ export function getDefaultComponents(
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
-          height: 44,
+          // height: 44,
           borderRadius: 8
         }
       }
@@ -99,7 +99,6 @@ export function getDefaultComponents(
           borderRadius: 8,
           boxShadow: 'none'
         },
-
         option: {
           height: 50
         },
@@ -152,120 +151,84 @@ export function getDefaultComponents(
       styleOverrides: {
         root: ({ theme }) =>
           theme.unstable_sx({
-            fontSize: 16,
+            fontSize: FontSize.f14,
             textTransform: 'none',
             fontFamily,
-            lineHeight: 1.4,
+            lineHeight: 'normal',
             padding: '12px 24px',
             fontWeight: 600,
+            borderRadius: '100px',
             transition:
-              'background-color 400ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-            [theme.breakpoints.down('md')]: {
-              fontSize: 14
-            }
-          }),
-        sizeLarge: ({ theme }) =>
-          theme.unstable_sx({
-            height: {
-              xs: 38,
-              md: 44
-            },
-            borderRadius: {
-              xs: '100px',
-              md: '100px'
-            }
-          }),
-        sizeMedium: ({ theme }) =>
-          theme.unstable_sx({
-            height: {
-              xs: 34,
-              md: 44
-            },
-            borderRadius: '100px'
+              'background-color 400ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms'
+            // '&:hover': {
+            //   boxShadow: 'none'
+            // },
           }),
         sizeSmall: {
-          height: 29,
-          fontSize: 12,
-          padding: '6px 16px',
-          borderRadius: '100px',
+          fontSize: FontSize.f12,
+          padding: '7.5px 16px',
           minWidth: 'fit-content'
         }
       },
       variants: [
         {
-          props: { variant: 'black' },
-          style: {
-            backgroundColor: '#121212',
-            color: '#ffffff',
-            '&:hover': {
-              backgroundColor: '#12121299'
-            }
-          }
-        },
-        {
-          props: { variant: 'text' },
-          style: {
-            color: 'var(--ps-text-primary4)',
-            '&:hover': {
-              color: 'var(--ps-text-100)',
-              backgroundColor: 'transparent'
-            },
-            '&:disabled': {
-              color: 'var(--ps-text-20)'
-            }
-          }
-        },
-        {
           props: { variant: 'contained', color: 'primary' },
           style: {
-            background: 'var(--ps-text-primary4)',
-            color: 'var(--ps-neutral)',
-            '&:hover': {
-              backgroundColor: 'var(--ps-text-primary4)',
-              boxShadow: '0px 3px 0px 0px #695C47'
-            },
+            background: 'var(--ps-color-600)',
+            color: 'var(--ps-color-100)',
             '&:disabled': {
-              backgroundColor: 'var(--ps-neutral3)',
-              color: 'var(--ps-text-primary2)'
-            }
-          }
-        },
-        {
-          props: { variant: 'input' },
-          style: {
-            fontSize: 12,
-            height: 25,
-            padding: '4px 12px',
-            borderRadius: 4,
-            background: 'var(--ps-text-primary4)',
-            color: 'var(--ps-text-primary)',
-            boxShadow: '2px 4px 8px 0px rgba(0, 0, 0, 0.08)',
-            minWidth: 'auto',
-            '&:hover': {
-              backgroundColor: 'var(--ps-text-primary4)',
-              boxShadow: '0px 3px 0px 0px #695C47'
-            },
-            '&:disabled': {
-              backgroundColor: 'var(--ps-neutral3)',
-              color: 'var(--ps-text-primary2)'
+              color: 'var(--ps-color-100)',
+              backgroundColor: 'var(--ps-color-300)'
             }
           }
         },
         {
           props: { variant: 'outlined', color: 'primary' },
           style: {
-            background: 'var(--ps-neutral)',
-            color: 'var(--ps-text-primary4)',
-            border: '1px solid var(--ps-text-primary4)',
+            padding: '11px 24px',
+            background: 'var(--ps-color-100)',
+            color: 'var(--ps-color-600)',
+            border: '1px solid var(--ps-color-300)',
             '&:hover': {
-              background: 'var(--ps-neutral)',
-              boxShadow: '0px 3px 0px 0px #695C47'
+              border: '1px solid var(--ps-color-300)',
+              background: 'transparent'
             },
             '&:disabled': {
               backgroundColor: 'transparent',
-              color: 'var(--ps-text-20)',
-              border: '1px solid var(--ps-text-20)'
+              color: 'var(--ps-color-300)',
+              border: '1px solid var(--ps-color-300)'
             }
+          }
+        },
+        {
+          props: { variant: 'text' },
+          style: {
+            color: 'var(--ps-brand)',
+            fontSize: FontSize.f12,
+            padding: '4px 0',
+            borderBottom: '1px solid var(--ps-brand)',
+            borderRadius: 0,
+            minWidth: 'auto',
+            '&:hover': {
+              color: 'var(--ps-brand)',
+              backgroundColor: 'transparent'
+            },
+            '&:disabled': {
+              color: 'var(--ps-brand)',
+              opacity: 0.5
+            }
+          }
+        },
+        {
+          props: { variant: 'input' },
+          style: {
+            padding: '11px 16px',
+            fontSize: FontSize.f16,
+            lineHeight: 1,
+            justifyContent: 'space-between',
+            backgroundColor: 'transparents',
+            border: '1px solid var(--ps-color-300)',
+            borderRadius: 4
           }
         }
       ]
@@ -280,7 +243,7 @@ export function getDefaultComponents(
               maxHeight: 350,
               boxShadow: 'none',
               '& .MuiMenu-list .MuiListSubheader-sticky': {
-                fontSize: 12,
+                fontSize: FontSize.f12,
                 lineHeight: 20 / 12,
                 marginTop: 10,
                 marginBottom: 10
@@ -328,11 +291,8 @@ export function getDefaultComponents(
           '& .MuiPagination-ul': {
             // alignItems: 'baseline'
           },
-
           '& .MuiPaginationItem-root': {
-            height: 32,
             borderRadius: 6,
-            width: 32,
             margin: '0 12px'
           }
         }
@@ -347,25 +307,3 @@ export function getDefaultComponents(
     }
   }
 }
-
-export const TabMediumBox = styled(Box)(
-  ({ active, width, fontSize }: { active: boolean; width?: number | string; fontSize?: number | string }) => ({
-    display: 'flex',
-    width: width || 100,
-    padding: '8px 16px',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 6,
-    borderRadius: 100,
-    fontSize: fontSize || 16,
-    fontStyle: 'normal',
-    fontWeight: 600,
-    lineHeight: 1.4,
-    cursor: 'pointer',
-    background: active ? 'var(--ps-text-primary4)' : 'transparent',
-    color: active ? 'var(--ps-neutral)' : 'var(--ps-text-40)',
-    '&:hover': {
-      color: !active ? 'var(--ps-text-primary4)' : 'var(--ps-neutral)'
-    }
-  })
-)

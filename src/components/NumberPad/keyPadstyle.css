@@ -1,0 +1,103 @@
+.simple-keyboard {
+}
+
+.simple-keyboard.hg-theme-default.light-theme {
+  border-radius: 0;
+  background: #fff;
+}
+
+.simple-keyboard.hg-layout-default.light-theme .hg-button {
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.simple-keyboard.hg-layout-default.light-theme .hg-button {
+  background: #fff;
+  color: var(--ps-rise);
+  font-weight: 600;
+  height: 64px;
+}
+
+.simple-keyboard.hg-layout-default.light-theme.rise .hg-button {
+  color: var(--ps-rise);
+}
+
+.simple-keyboard.hg-layout-default.light-theme.drop .hg-button {
+  color: var(--ps-drop);
+}
+
+.simple-keyboard.hg-layout-default.light-theme.rise .hg-button.bkspBtn {
+  background: url(./assets/img/bkspBgRise.png) no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+  color: var(--ps-rise);
+  font-weight: 600;
+}
+
+.simple-keyboard.hg-layout-default.light-theme.drop .hg-button.bkspBtn {
+  background: url(./assets/img/bkspBgDrop.png) no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+  color: var(--ps-drop);
+  font-weight: 600;
+}
+
+.simple-keyboard.hg-layout-default.light-theme .hg-button:active,
+.simple-keyboard.hg-layout-default.light-theme .hg-button.bkspBtn:active {
+  background-color: var(--ps-color-300);
+}
+
+/*  */
+.simple-keyboard.hg-theme-default.dark-theme {
+  background: #000;
+  border-radius: 0;
+}
+
+.simple-keyboard.hg-layout-default.dark-theme .hg-button {
+  box-shadow: none;
+  border-bottom: none;
+}
+
+.simple-keyboard.hg-layout-default.dark-theme .hg-button {
+  background: #000;
+  color: var(--ps-rise);
+  font-weight: 600;
+  height: 64px;
+}
+
+.simple-keyboard.hg-layout-default.dark-theme.rise .hg-button {
+  color: var(--ps-rise);
+}
+
+.simple-keyboard.hg-layout-default.dark-theme.drop .hg-button {
+  color: var(--ps-drop);
+}
+
+.simple-keyboard.hg-layout-default.dark-theme .hg-button.bkspBtn {
+  background: url(./assets/img/bkspBgRise.png) no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+  color: var(--ps-rise);
+  font-weight: 600;
+}
+
+.simple-keyboard.hg-layout-default.dark-theme.rise .hg-button.bkspBtn {
+  background: url(./assets/img/bkspBgRise.png) no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+  color: var(--ps-rise);
+  font-weight: 600;
+}
+
+.simple-keyboard.hg-layout-default.dark-theme.drop .hg-button.bkspBtn {
+  background: url(./assets/img/bkspBgDrop.png) no-repeat;
+  background-size: 24px 24px;
+  background-position: center;
+  color: var(--ps-rise);
+  font-weight: 600;
+}
+
+.simple-keyboard.hg-layout-default.dark-theme .hg-button:active,
+.simple-keyboard.hg-layout-default.dark-theme .hg-button.bkspBtn:active {
+  background-color: var(--ps-color-300);
+}

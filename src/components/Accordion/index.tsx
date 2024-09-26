@@ -4,6 +4,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 // import Typography from '@mui/material/Typography'
 import AddIcon from '@mui/icons-material/Add'
 import RemoveIcon from '@mui/icons-material/Remove'
+import { FontSize } from '@/themes'
 interface Props {
   summary: string | JSX.Element
   details: string | JSX.Element
@@ -26,7 +27,7 @@ export default function _Accordion(props: Props) {
       expanded={expanded}
     >
       <AccordionSummary
-        sx={{ fontSize: { xs: '0.875rem', md: '1rem' } }}
+        sx={{ fontSize: { xs: FontSize.f14, md: FontSize.f16 } }}
         expandIcon={expanded ? <RemoveIcon sx={{ color: '#929292' }} /> : <AddIcon sx={{ color: '#929292' }} />}
       >
         {summary}

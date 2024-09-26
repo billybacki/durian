@@ -1,8 +1,8 @@
 import Dropzone, { Accept } from 'react-dropzone'
 import DownloadIcon from 'assets/images/toolBox/ri_download-cloud-fill.svg'
 import { Box, Typography, styled } from '@mui/material'
-import useBreakpoint from '@/hooks/useBreakpoint'
 import { ReactNode } from 'react'
+import { FontSize } from '@/themes'
 
 export default function DropZone({
   getFile,
@@ -13,7 +13,6 @@ export default function DropZone({
   accept?: Accept
   children?: ReactNode
 }) {
-  const isMd = useBreakpoint('md')
   return (
     <Dropzone accept={accept} onDrop={acceptedFiles => getFile(acceptedFiles[0])}>
       {({ getRootProps, getInputProps }) => (
@@ -27,7 +26,12 @@ export default function DropZone({
             <DotBox {...getRootProps()}>
               <input {...getInputProps()} />
               <DownloadIcon />
-              <Typography color={'var(--ps-neutral3)'} ml={10} fontSize={isMd ? 13 : 15} fontFamily={'IBM Plex Sans'}>
+              <Typography
+                color={'var(--ps-color-300)'}
+                ml={10}
+                fontSize={{ xs: FontSize.f13, md: FontSize.f15 }}
+                fontFamily={'IBM Plex Sans'}
+              >
                 Drop file here to upload or <BlueHighLight>choose file</BlueHighLight>
               </Typography>
             </DotBox>
@@ -42,7 +46,7 @@ const DotBox = styled(Box)`
   display: flex;
   padding: 40px 24px;
   border-radius: 8px;
-  border: 1px dashed var(--ps-neutral3);
+  border: 1px dashed var(--ps-color-300);
   cursor: pointer;
 `
 
